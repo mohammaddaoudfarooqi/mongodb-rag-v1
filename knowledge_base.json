@@ -1,0 +1,177 @@
+[
+  {
+    "title": "Standard Return Policy",
+    "text": "Unopened merchandise may be returned within 30 days of delivery for a full refund to the original payment method. Opened electronics may be returned within 15 days subject to a 15% restocking fee. Personalized and final-sale items are not returnable. Customers must provide the order ID or the email associated with the order.",
+    "metadata": {"source": "policies/returns.pdf", "category": "returns", "audience": "agent", "last_updated": "2026-02-12"}
+  },
+  {
+    "title": "Holiday Return Window Extension",
+    "text": "Orders placed between November 1 and December 24 follow an extended return window: items are returnable through January 31 of the following year. The extension does not apply to final-sale items, custom engravings, or perishable goods. Restocking fees on opened electronics still apply.",
+    "metadata": {"source": "policies/returns-holiday.pdf", "category": "returns", "audience": "agent", "last_updated": "2026-01-05"}
+  },
+  {
+    "title": "International Returns",
+    "text": "Customers outside the United States must request a return authorization (RMA) before shipping. We do not refund original international shipping or duties. Returns must be sent via a tracked carrier; lost-in-transit returns without tracking are not refundable.",
+    "metadata": {"source": "policies/returns-international.pdf", "category": "returns", "audience": "agent", "last_updated": "2025-11-19"}
+  },
+  {
+    "title": "Promotion Stacking Rules",
+    "text": "One storewide percent-off coupon may be combined with one category-specific dollar-off coupon; two percent-off coupons cannot be combined. Loyalty-program points always apply on the net total after discounts. Bundle discounts are calculated before coupons. Employee discount cannot be combined with promotional codes.",
+    "metadata": {"source": "policies/promotions.pdf", "category": "pricing", "audience": "agent", "last_updated": "2026-03-02"}
+  },
+  {
+    "title": "Price-Match Policy",
+    "text": "We match identified competitor prices within 14 days of purchase on identical in-stock items. Marketplace sellers, auction sites, and flash-sale or daily-deal sites are excluded. Price match is applied as a refund of the difference to the original payment method. Bundle pricing is not eligible for price-match.",
+    "metadata": {"source": "policies/price-match.pdf", "category": "pricing", "audience": "agent", "last_updated": "2026-02-28"}
+  },
+  {
+    "title": "Coupon Abuse Detection",
+    "text": "Multiple accounts using the same payment method or shipping address may trigger coupon-abuse review. Agents must not manually re-apply a coupon that the system has revoked. Escalate suspected abuse to the Trust & Safety queue with the order IDs and the coupon code.",
+    "metadata": {"source": "runbooks/coupon-abuse.pdf", "category": "pricing", "audience": "agent", "last_updated": "2026-04-08"}
+  },
+  {
+    "title": "Standard Shipping SLA",
+    "text": "Standard ground ships within 2 business days and delivers in 3 to 7 business days. Expedited 2-day ships same-day if ordered before 1:00 PM ET. Overnight ships same-day if ordered before 11:00 AM ET. Saturday delivery is available in selected metro ZIPs for an additional fee.",
+    "metadata": {"source": "policies/shipping.pdf", "category": "fulfillment", "audience": "customer", "last_updated": "2026-03-15"}
+  },
+  {
+    "title": "Heavy and Oversize Freight",
+    "text": "Items over 60 pounds or with any dimension over 48 inches ship via freight carrier and typically deliver in 5 to 10 business days. The carrier will call to schedule a 4-hour delivery window. White-glove room-of-choice delivery and assembly are available for an additional charge per item.",
+    "metadata": {"source": "policies/freight.pdf", "category": "fulfillment", "audience": "customer", "last_updated": "2026-02-10"}
+  },
+  {
+    "title": "Lost or Stolen Package Procedure",
+    "text": "If tracking shows delivered but the customer has not received the package, wait 48 hours, then file a carrier trace. After the trace closes with no recovery, offer a one-time reship at no charge or a full refund. A police report is required for claims over $750.",
+    "metadata": {"source": "runbooks/lost-package.pdf", "category": "fulfillment", "audience": "agent", "last_updated": "2026-04-22"}
+  },
+  {
+    "title": "Damaged in Transit",
+    "text": "If a customer reports a package arrived damaged, request photos of the box and the item within 48 hours. Issue a replacement from available stock; if out of stock, offer a refund or backorder. The customer keeps the damaged item unless the value exceeds $200, in which case we send a prepaid return label.",
+    "metadata": {"source": "runbooks/damaged-transit.pdf", "category": "fulfillment", "audience": "agent", "last_updated": "2026-03-30"}
+  },
+  {
+    "title": "Address Change After Order Placement",
+    "text": "Address changes are possible only before the order enters the picking stage, typically within 30 minutes of placement. After picking, the customer must refuse delivery or accept and return. Apartment or unit number additions can be requested via the carrier directly using the tracking number.",
+    "metadata": {"source": "runbooks/address-change.pdf", "category": "fulfillment", "audience": "agent", "last_updated": "2026-01-25"}
+  },
+  {
+    "title": "Loyalty Program Tiers",
+    "text": "Member tier (0 points) earns 1 point per $1 spent. Gold tier (5,000 points per calendar year) earns 1.25 points per $1 and free standard shipping. Platinum tier (15,000 points per calendar year) earns 1.5 points per $1, free expedited shipping, priority customer service, and early access to seasonal sales.",
+    "metadata": {"source": "policies/loyalty-tiers.pdf", "category": "loyalty", "audience": "customer", "last_updated": "2026-01-01"}
+  },
+  {
+    "title": "Loyalty Points Expiration",
+    "text": "Loyalty points expire 18 months after the calendar month in which they were earned. Activity on the account, including purchases or point redemptions, does not extend the expiration of previously earned points. Tier status is recalculated on January 1 each year based on the prior year's earned points.",
+    "metadata": {"source": "policies/loyalty-expiration.pdf", "category": "loyalty", "audience": "customer", "last_updated": "2026-01-01"}
+  },
+  {
+    "title": "Loyalty Point Redemption",
+    "text": "Points redeem at 100 points per $1 of store credit applied at checkout. Minimum redemption is 500 points. Points cannot be applied to gift cards, taxes, or shipping. Redemptions on returned orders are reversed and the points are returned to the account.",
+    "metadata": {"source": "policies/loyalty-redemption.pdf", "category": "loyalty", "audience": "customer", "last_updated": "2026-01-01"}
+  },
+  {
+    "title": "Fraud Hold Escalation",
+    "text": "An order is placed on manual-review hold when (a) the billing and shipping countries differ and the order value exceeds $500, or (b) three or more orders from the same IP address within 1 hour, or (c) a payment-auth verification mismatch. Agents must never release a held order without Loss Prevention authorization.",
+    "metadata": {"source": "runbooks/fraud-hold.pdf", "category": "fraud", "audience": "agent", "last_updated": "2026-04-15"}
+  },
+  {
+    "title": "Chargeback Response Procedure",
+    "text": "On receiving a chargeback notification, gather the order details, shipping proof of delivery, signed receipt if applicable, and any customer communication. Submit the evidence package within 7 calendar days. Do not contact the cardholder directly during an open dispute.",
+    "metadata": {"source": "runbooks/chargebacks.pdf", "category": "fraud", "audience": "agent", "last_updated": "2026-02-20"}
+  },
+  {
+    "title": "Account Takeover Indicators",
+    "text": "Indicators of a compromised account include: a password reset followed within 1 hour by a shipping-address change, a new payment method added then used immediately for an order over $300, or a sudden change in the device fingerprint and geolocation. Lock the account, force re-verification, and notify the customer through a previously verified channel.",
+    "metadata": {"source": "runbooks/account-takeover.pdf", "category": "fraud", "audience": "agent", "last_updated": "2026-04-29"}
+  },
+  {
+    "title": "Gift Card Policy",
+    "text": "Gift cards do not expire and have no inactivity fees. Lost or stolen physical gift cards cannot be replaced unless the customer can provide the original card number and proof of purchase. Digital gift cards are delivered by email within 1 hour of order capture.",
+    "metadata": {"source": "policies/gift-cards.pdf", "category": "payments", "audience": "customer", "last_updated": "2026-03-05"}
+  },
+  {
+    "title": "Buy Now Pay Later Eligibility",
+    "text": "Buy-now-pay-later (BNPL) is offered through our financing partner on cart totals between $35 and $1,500. Approval is performed by the partner; we do not have visibility into the decision. Returns of BNPL orders are refunded to the partner, who adjusts the customer's installment plan accordingly.",
+    "metadata": {"source": "policies/bnpl.pdf", "category": "payments", "audience": "customer", "last_updated": "2026-02-14"}
+  },
+  {
+    "title": "Refund Timing by Payment Method",
+    "text": "Credit and debit card refunds post in 5 to 10 business days. PayPal refunds post in 3 to 5 business days. Store credit is issued instantly. BNPL refunds depend on the partner and may take up to 14 business days. We cannot expedite refunds at the issuing bank.",
+    "metadata": {"source": "policies/refund-timing.pdf", "category": "payments", "audience": "customer", "last_updated": "2026-03-12"}
+  },
+  {
+    "title": "Subscription Auto-Renewal",
+    "text": "Subscription orders renew on the schedule selected at signup (every 30, 60, or 90 days). Customers receive a reminder email 3 days before each renewal. Skipping a renewal must be done before the reminder cutoff; after that, the order is locked for fulfillment and can only be returned post-delivery.",
+    "metadata": {"source": "policies/subscriptions.pdf", "category": "subscriptions", "audience": "customer", "last_updated": "2026-04-01"}
+  },
+  {
+    "title": "Subscription Cancellation",
+    "text": "Customers may cancel a subscription at any time from their account page or by contacting support. Cancellation is effective for future renewals; the next-already-shipped order, if any, is not cancellable. There are no cancellation fees.",
+    "metadata": {"source": "policies/subscription-cancel.pdf", "category": "subscriptions", "audience": "customer", "last_updated": "2026-04-01"}
+  },
+  {
+    "title": "Manufacturer Warranty Claims",
+    "text": "Items with a manufacturer warranty must be claimed directly with the manufacturer after the 30-day return window. We provide proof of purchase on request. For brands where we are an authorized service center, we accept warranty drop-offs at our depot in Edison, NJ.",
+    "metadata": {"source": "policies/warranty.pdf", "category": "warranty", "audience": "agent", "last_updated": "2025-12-10"}
+  },
+  {
+    "title": "Extended Protection Plan",
+    "text": "Our extended protection plan covers accidental damage, mechanical failure outside of the manufacturer warranty, and one battery replacement on covered electronics. The plan must be purchased within 30 days of the original order. Claims are filed through the protection plan portal, not through customer service.",
+    "metadata": {"source": "policies/protection-plan.pdf", "category": "warranty", "audience": "customer", "last_updated": "2026-02-04"}
+  },
+  {
+    "title": "Backorder and Preorder Handling",
+    "text": "Backordered items reserve in the order they were placed. Customers are notified when stock is allocated and again when the order ships. Preorder release dates are estimates from the manufacturer and may shift. Customers can cancel a preorder for a full refund any time before it ships.",
+    "metadata": {"source": "policies/backorder.pdf", "category": "fulfillment", "audience": "customer", "last_updated": "2026-03-22"}
+  },
+  {
+    "title": "Out-of-Stock During Picking",
+    "text": "If an item is found to be out of stock after order placement, notify the customer within 24 hours. Offer the customer a substitution of equal or greater value, a backorder with an estimated date, or a refund. Do not silently ship a substitute without explicit customer approval.",
+    "metadata": {"source": "runbooks/oos-picking.pdf", "category": "fulfillment", "audience": "agent", "last_updated": "2026-04-12"}
+  },
+  {
+    "title": "Bulk and B2B Orders",
+    "text": "Orders of 25 or more units of the same SKU qualify for B2B pricing. B2B customers must register a tax-exempt account if applicable. Net-30 terms are available after a credit check. B2B orders ship from our commercial warehouse and are not eligible for the consumer return policy.",
+    "metadata": {"source": "policies/b2b.pdf", "category": "b2b", "audience": "customer", "last_updated": "2026-01-30"}
+  },
+  {
+    "title": "Tax-Exempt Purchases",
+    "text": "Tax-exempt customers must upload a valid resale or exemption certificate to their account before placing an order. Tax already collected on a placed order can be refunded only with a valid certificate dated on or before the order date. We collect sales tax in all U.S. states with economic nexus.",
+    "metadata": {"source": "policies/tax-exempt.pdf", "category": "b2b", "audience": "customer", "last_updated": "2026-02-18"}
+  },
+  {
+    "title": "Customer Service Hours and Channels",
+    "text": "Live chat and phone support are available Monday through Saturday, 8:00 AM to 10:00 PM ET, and Sunday 10:00 AM to 8:00 PM ET. Email support replies within one business day. Social-media DMs are answered during business hours and are not a guaranteed support channel.",
+    "metadata": {"source": "policies/contact.pdf", "category": "support", "audience": "customer", "last_updated": "2026-04-10"}
+  },
+  {
+    "title": "Escalation to Supervisor",
+    "text": "Escalate to a supervisor when: a customer requests one explicitly, a refund exceeds $500 outside policy, a same-issue contact occurs three or more times, a legal or media threat is mentioned, or a safety incident is alleged. Document the reason for escalation in the case notes before transfer.",
+    "metadata": {"source": "runbooks/escalation.pdf", "category": "support", "audience": "agent", "last_updated": "2026-03-18"}
+  },
+  {
+    "title": "Data Privacy and Account Deletion",
+    "text": "Customers may request export or deletion of their personal data through the privacy portal. Order history required for tax and warranty purposes is retained per legal hold. Deletion requests are completed within 30 days. Pending or recent orders must be resolved before an account can be deleted.",
+    "metadata": {"source": "policies/privacy.pdf", "category": "privacy", "audience": "customer", "last_updated": "2026-01-15"}
+  },
+  {
+    "title": "Accessibility Accommodations",
+    "text": "We support screen-reader navigation across the storefront and offer a high-contrast theme. Customers who need an accessible alternative format for any document can request it via accessibility@example.com. Curbside pickup is available at all retail locations on request.",
+    "metadata": {"source": "policies/accessibility.pdf", "category": "support", "audience": "customer", "last_updated": "2026-02-22"}
+  },
+  {
+    "title": "In-Store Pickup Workflow",
+    "text": "Buy-online-pickup-in-store (BOPIS) orders are typically ready within 2 hours during store hours. Customers receive a Ready-for-Pickup email and must bring a photo ID and the order number. Unclaimed orders are returned to inventory after 7 days and the customer is refunded automatically.",
+    "metadata": {"source": "policies/bopis.pdf", "category": "fulfillment", "audience": "customer", "last_updated": "2026-03-08"}
+  },
+  {
+    "title": "Recall and Safety Notices",
+    "text": "When a manufacturer issues a product recall, we proactively email customers who purchased the affected SKU within the recall window. Returns of recalled items are accepted regardless of return-window age and refunded in full. Customers should stop using the product immediately and follow the manufacturer's recall instructions.",
+    "metadata": {"source": "runbooks/recalls.pdf", "category": "safety", "audience": "agent", "last_updated": "2026-04-25"}
+  },
+  {
+    "title": "Hazmat and Restricted Shipping",
+    "text": "Items classified as hazmat (lithium batteries above watt-hour limits, aerosols, certain liquids) cannot ship by air and are restricted to ground shipping within the contiguous United States. We do not ship hazmat items to PO boxes, APO/FPO addresses, or international destinations.",
+    "metadata": {"source": "policies/hazmat.pdf", "category": "fulfillment", "audience": "agent", "last_updated": "2026-02-26"}
+  }
+]

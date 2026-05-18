@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "MongoDB": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mongodb-mcp-server@latest"
+      ],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "mongodb+srv://<user>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority",
+        "MDB_MCP_READ_ONLY": "false"
+      }
+    }
+  },
+  "_comments": {
+    "MDB_MCP_CONNECTION_STRING": "Replace with your Atlas M0 SRV string. Same value the app uses — single source of truth.",
+    "MDB_MCP_READ_ONLY": "Set to 'true' for the demo's runtime / CI to prevent accidental writes. The ingest step needs writes, so toggle off only for that step or use a separate config.",
+    "_setup": "Copy this file to mcp.json (gitignored). Atlas M0 setup: https://www.mongodb.com/docs/atlas/tutorial/create-new-cluster/"
+  }
+}

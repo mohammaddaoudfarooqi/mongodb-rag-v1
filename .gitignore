@@ -1,0 +1,20 @@
+.env
+.mcp.json
+mcp.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# uv
+.uv/
+uv.lock.bak
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

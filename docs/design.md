@@ -67,8 +67,9 @@ class Retriever(Protocol):
 `MongoRetriever`:
 
 1. On construction, calls `db.command("buildInfo")["version"]`. Picks
-   `_rank_fusion` if `>= 8.1`, otherwise `_union_with_rrf`. Logs the choice
-   exactly once via `logging.info("retrieval: %s", path)`.
+   `_rank_fusion` if `>= 8.0` (Atlas M0 qualifies), otherwise
+   `_union_with_rrf`. Logs the choice exactly once via
+   `logging.info("retrieval: %s", path)`.
 2. `_rank_fusion(query, k)` — single `$rankFusion` stage with two pipelines
    (vector + text), weighted 0.7 / 0.3.
 3. `_union_with_rrf(query, k)` — runs `$vectorSearch` and `$search`

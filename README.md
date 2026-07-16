@@ -49,8 +49,9 @@ should see the answer stream in plus a Sources panel that cites
   `$search` (lexical, standard analyzer). Default weights `0.7 / 0.3`
   (vector-leaning), tunable via env.
 - **MongoDB version detection.** On startup the app inspects
-  `db.command("buildInfo").version`. ≥ 8.1 → native `$rankFusion`;
-  otherwise `$unionWith` + reciprocal rank fusion (`rrf_k = 60`). One log
+  `db.command("buildInfo").version`. ≥ 8.0 → native `$rankFusion`
+  (Atlas M0 runs 8.0+, so it uses this path); otherwise `$unionWith` +
+  reciprocal rank fusion (`rrf_k = 60`). One log
   line names the chosen path: `retrieval: rankFusion` or
   `retrieval: unionWith+rrf`.
 - **Asymmetric embeddings** at 1024 dims: `voyage-4` for documents,

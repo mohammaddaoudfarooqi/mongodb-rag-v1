@@ -65,10 +65,11 @@ Show a "Preparing search indexes…" spinner on first load.
 1. Single text input + Submit.
 2. Hybrid retrieval with **vector-leaning weights: 0.7 vector / 0.3
    lexical** (default, configurable via env). **Default implementation
-   is `$unionWith` + reciprocal-rank fusion**, since Atlas M0 is on
-   MongoDB 8.0 and `$rankFusion` requires 8.1+. On startup, check
-   `db.command("buildInfo").version`; if ≥ 8.1, use the `$rankFusion`
-   path. Log one line at startup naming which path was chosen
+   is `$rankFusion`**, since Atlas M0 runs MongoDB 8.0 and `$rankFusion`
+   is supported on 8.0+. On startup, check
+   `db.command("buildInfo").version`; if ≥ 8.0, use the `$rankFusion`
+   path, otherwise fall back to `$unionWith` + reciprocal-rank fusion.
+   Log one line at startup naming which path was chosen
    (`retrieval: rankFusion` / `retrieval: unionWith+rrf`).
 3. Top-k chunks (default `k=5`) → Bedrock with a system prompt that says:
    *answer only from the provided context; otherwise say "I don't have that

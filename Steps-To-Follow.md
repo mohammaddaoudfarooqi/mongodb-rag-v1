@@ -162,7 +162,8 @@ Claude Code will:
    `_id` is a stable hash of source + title).
 6. Detect `db.command("buildInfo").version` at app startup and log
    one line naming the chosen retrieval path: `retrieval: rankFusion`
-   (8.1+) or `retrieval: unionWith+rrf` (M0 today is 8.0).
+   (8.0+, which is what Atlas M0 runs) or `retrieval: unionWith+rrf`
+   (fallback for pre-8.0 servers).
 7. Write the pytest suite — golden path + fallback path against
    in-memory fakes — plus a side-effect-free import test that fails
    if any module touches `MongoClient(...)` or `boto3.client(...)`
@@ -252,7 +253,7 @@ Open the run on GitHub and confirm all jobs pass.
 ## What to look for during the demo
 
 - The **retrieval-path log line** at startup — `retrieval: rankFusion`
-  on 8.1+, `retrieval: unionWith+rrf` on M0 (8.0). The same code handles
+  on 8.0+, `retrieval: unionWith+rrf` on cluster (<8.0). The same code handles
   both; the version check picks the path.
 - The **`$rankFusion` pipeline** (or `$unionWith` + RRF fallback) in
   `app/retrieval.py` — vector + lexical fused with 0.7 / 0.3 weights.
@@ -277,7 +278,7 @@ Open the run on GitHub and confirm all jobs pass.
 
 | Symptom | Fix |
 | --- | --- |
-| `$rankFusion` not recognized | Atlas M0 ships MongoDB 8.0; the app falls back to `$unionWith` + RRF automatically. The startup log line tells you which path is active. |
+| `$rankFusion` not recognized | `$rankFusion` needs MongoDB 8.0+. Atlas M0 runs 8.0+, so it uses `$rankFusion`; only pre-8.0 servers fall back to `$unionWith` + RRF automatically. The startup log line tells you which path is active. |
 | `Collection 'knowledge_base.kb_chunks' does not exist` | Atlas refuses to create search indexes on a missing namespace. Run `scripts/ingest.py` first, or rely on `app/indexes.py` which auto-creates the collection. |
 | Vector index "still building" | M0 indexes can take 1–3 minutes. The ingest script polls; if it gives up, re-run it. |
 | `ModuleNotFoundError: No module named 'app'` when running scripts directly | Already handled — `scripts/*.py` and `app/main.py` prepend the repo root to `sys.path`. If you reorganise, preserve that. |

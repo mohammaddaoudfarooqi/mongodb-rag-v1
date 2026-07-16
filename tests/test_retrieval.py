@@ -66,8 +66,8 @@ def _doc(_id: str, score: float = 0.5) -> dict:
     }
 
 
-def test_logs_rank_fusion_path_on_8_1(caplog):
-    db = _FakeDB("8.1.0")
+def test_logs_rank_fusion_path_on_8_0(caplog):
+    db = _FakeDB("8.0.4")
     coll = _FakeColl(db, results=[])
     caplog.set_level(logging.INFO)
     MongoRetriever(coll, _FakeEmbedder(), _settings())
@@ -75,8 +75,8 @@ def test_logs_rank_fusion_path_on_8_1(caplog):
     assert msgs == ["retrieval: rankFusion"]
 
 
-def test_logs_union_with_path_on_8_0(caplog):
-    db = _FakeDB("8.0.4")
+def test_logs_union_with_path_below_8_0(caplog):
+    db = _FakeDB("7.0.4")
     coll = _FakeColl(db, results=[])
     caplog.set_level(logging.INFO)
     MongoRetriever(coll, _FakeEmbedder(), _settings())
@@ -85,7 +85,7 @@ def test_logs_union_with_path_on_8_0(caplog):
 
 
 def test_rank_fusion_pipeline_uses_rank_fusion_stage():
-    db = _FakeDB("8.1.0")
+    db = _FakeDB("8.0.0")
     coll = _FakeColl(db, results=[_doc("a", 0.9), _doc("b", 0.5)])
     r = MongoRetriever(coll, _FakeEmbedder(), _settings(k=2))
     chunks = r.retrieve("hello", k=2)
@@ -97,7 +97,7 @@ def test_rank_fusion_pipeline_uses_rank_fusion_stage():
 
 
 def test_union_with_pipeline_runs_two_pipelines_and_fuses_via_rrf():
-    db = _FakeDB("8.0.0")
+    db = _FakeDB("7.0.0")
     # Two pipelines run sequentially (vector branch then text branch).
     # Return a small overlapping result set so RRF fusion produces a
     # deterministic top-2.
@@ -161,7 +161,7 @@ def test_union_with_pipeline_runs_two_pipelines_and_fuses_via_rrf():
 
 
 def test_retrieve_passes_query_embedding_and_k_to_aggregation():
-    db = _FakeDB("8.1.0")
+    db = _FakeDB("8.0.0")
     coll = _FakeColl(db, results=[_doc("a", 0.9)])
     r = MongoRetriever(coll, _FakeEmbedder(), _settings(k=3))
     r.retrieve("hello", k=3)
@@ -172,7 +172,7 @@ def test_retrieve_passes_query_embedding_and_k_to_aggregation():
 
 
 def test_returns_at_most_k_results():
-    db = _FakeDB("8.1.0")
+    db = _FakeDB("8.0.0")
     coll = _FakeColl(db, results=[_doc(str(i), 1.0 - i * 0.01) for i in range(20)])
     r = MongoRetriever(coll, _FakeEmbedder(), _settings(k=5))
     chunks = r.retrieve("q", k=5)

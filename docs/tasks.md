@@ -46,7 +46,7 @@ Sequenced for TDD; each task lists tests first.
 
 ## T6 — `app/retrieval.py`
 
-- Tests first: version >= 8.1 picks `$rankFusion` path; < 8.1 picks unionWith;
+- Tests first: version >= 8.0 picks `$rankFusion` path; < 8.0 picks unionWith;
   startup logs exactly one `retrieval: …` line; RRF math correct on a small
   hand-crafted result set; weights 0.7 / 0.3 from env override correctly.
 - MongoRetriever.

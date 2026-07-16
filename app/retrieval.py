@@ -39,7 +39,7 @@ def _parse_major_minor(version: str) -> tuple[int, int]:
 
 def _supports_rank_fusion(version: str) -> bool:
     major, minor = _parse_major_minor(version)
-    return (major, minor) >= (8, 1)
+    return (major, minor) >= (8, 0)
 
 
 def _to_chunk(doc: dict, score: float | None = None) -> Chunk:
@@ -55,8 +55,9 @@ def _to_chunk(doc: dict, score: float | None = None) -> Chunk:
 class MongoRetriever:
     """Hybrid (vector + lexical) retriever for MongoDB Atlas.
 
-    Picks `$rankFusion` on MongoDB 8.1+ and falls back to `$unionWith`-style
-    reciprocal rank fusion executed client-side on older servers.
+    Picks `$rankFusion` on MongoDB 8.0+ (including Atlas M0) and falls back to
+    `$unionWith`-style reciprocal rank fusion executed client-side on older
+    servers (< 8.0).
     """
 
     def __init__(self, coll: Any, embedder: Embedder, cfg: Settings):
@@ -75,7 +76,7 @@ class MongoRetriever:
             return self._rank_fusion(query, qvec, k)
         return self._union_with_rrf(query, qvec, k)
 
-    # ---- $rankFusion path (MongoDB 8.1+) ----
+    # ---- $rankFusion path (MongoDB 8.0+, incl. Atlas M0) ----
 
     def _rank_fusion(self, query: str, qvec: list[float], k: int) -> list[Chunk]:
         candidates = max(50, k * 10)
@@ -131,7 +132,7 @@ class MongoRetriever:
         ]
         return [_to_chunk(d) for d in self._coll.aggregate(pipeline)][:k]
 
-    # ---- $unionWith + RRF (MongoDB 8.0) ----
+    # ---- $unionWith + RRF fallback (MongoDB < 8.0) ----
 
     def _union_with_rrf(self, query: str, qvec: list[float], k: int) -> list[Chunk]:
         per_branch = max(k * 4, 20)
